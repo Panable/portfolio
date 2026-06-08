@@ -1,0 +1,35 @@
+:root {
+  --main-text-color: #E4E4E4;
+  --main-bg-color: #1E1E1E;
+  --main-accent-color: #FFDD33;
+  --main-link-color: #96A6C8;
+
+}
+
+@font-face {
+  font-family: 'IosevkaTerm NF';
+  src: url("../fonts/IosevkaTerm/IosevkaTermNerdFont-Thin.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IosevkaTerm NF';
+  src: url("../fonts/IosevkaTerm/IosevkaTermNerdFont-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IosevkaTerm NF';
+  src: url("../fonts/IosevkaTerm/IosevkaTermNerdFont-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IosevkaTerm NF';
+  src: url("../fonts/IosevkaTerm/IosevkaTermNerdFont-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}

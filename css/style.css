@@ -1,0 +1,48 @@
+body {
+  background-color: var(--main-bg-color);
+  font-family: IosevkaTerm NF, monospace;
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--main-text-color);
+}
+
+a {
+  color: var(--main-link-color);
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+main {
+  margin: 250px auto;
+  max-width: 650px;
+  line-height: 1.6em;
+  font-size: 18px;
+  padding: 0;
+}
+
+.links {
+  font-size: 24px;
+}
+
+.job-title {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.hello, .dhanveer {
+  font-size: 64px;
+  font-weight: 500;
+}
+
+.hello {
+  margin-bottom: 50px;
+}
+
+.dhanveer {
+  color: var(--main-accent-color);
+}
+
+.cursor
