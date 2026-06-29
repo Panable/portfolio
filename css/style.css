@@ -138,7 +138,7 @@ h1 {
 }
 
 .project {
-  display: inline-block;
+  display: flex;
   background-color: var(--alt-bg-color);
   border-radius: 20px;
   width: 100%;
