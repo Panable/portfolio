@@ -12,19 +12,38 @@ body {
     IosevkaTerm NF,
     monospace;
   font-size: 16px;
+
   font-weight: normal;
   color: var(--main-text-color);
   max-width: 100%;
   overflow-x: hidden;
+  padding: 0 16px 0 16px;
+}
+
+button {
+  font-family:
+    IosevkaTerm NF,
+    monospace;
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--main-text-color);
+  /* text-transform: uppercase; */
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 2px solid var(--main-text-color);
+  background: #282828;
+  box-shadow: 3px 3px var(--main-text-color);
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
 }
 
 a {
   color: var(--main-link-color);
   text-decoration: none;
-}
-
-p {
-  margin-bottom: 30px;
 }
 
 main {
@@ -73,6 +92,10 @@ h1 {
   margin: 16px 0;
 }
 
+h3 {
+  font-weight: bold;
+}
+
 .laptop {
   position: absolute;
   right: 10%;
@@ -91,11 +114,13 @@ h1 {
 
 .job-title {
   font-size: 24px;
+  margin-bottom: 30px;
   text-transform: uppercase;
 }
 
 .hello-hook {
   font-size: 64px;
+  margin-bottom: 30px;
   font-weight: 500;
 }
 
@@ -134,13 +159,108 @@ h1 {
 
 .projects {
   margin-top: 64px;
-  display: flex;
+  height: 2000px;
 }
 
 .project {
   display: flex;
+  flex-flow: row wrap;
   background-color: var(--alt-bg-color);
   border-radius: 20px;
   width: 100%;
-  height: 448px;
+  min-height: 448px;
+  padding: 48px 48px 0 48px;
+  padding-bottom: 0px;
+}
+
+.project-technologies {
+  font-weight: 200;
+}
+
+.project-footer {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 4rem;
+  padding-bottom: 24px;
+  flex: 1 100%;
+}
+
+.project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.project-text > h3:first-of-type {
+  margin-bottom: 16px;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-weight: 100;
+  font-style: italic;
+}
+
+@media all and (max-width: 900px) {
+  /* We tell both sidebars to share a row */
+  .project-text {
+    flex: 1 100%;
+    text-align: left;
+  }
+  .project-image {
+    flex: 2 100%;
+  }
+
+  .project {
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 0px;
+  }
+
+  .project-image > figure {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    margin-top: 30px;
+    max-width: 350px;
+  }
+}
+
+img {
+  opacity: 0.85;
+  box-shadow:
+    rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  border-radius: 8px;
+}
+
+@media all and (min-width: 901px) {
+  .project-image > figure {
+    width: 90%;
+    margin-left: auto;
+    /* border-radius: 25px; */
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+  }
+
+  .project-text {
+    flex: 1 50%;
+    text-align: justify;
+    padding-right: 16px;
+  }
+
+  .project-image {
+    flex: 1 50%;
+  }
+
+  .project {
+    padding: 48px 48px 0 48px;
+    padding-bottom: 0;
+  }
 }
