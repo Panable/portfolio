@@ -1,0 +1,33 @@
+name: Deploy website
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: [ self-hosted, docker ]
+    container:
+      image: node:20-bullseye   # <-- has Node for actions/checkout
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install rsync
+        run: |
+          apt-get update
+          apt-get install -y rsync
+
+      - name: Debug where we are
+        run: |
+          echo "PWD: $(pwd)"
+          ls -la /
+
+      # (add your build step here if needed)
+
+      - name: Sync to Caddy root
+      run: |
+        rsync -a --delete \
+          --exclude '.git' \
+          --exclude '.gitea' \
+          --exclude '.idea' \
+          ./ /deploy/portfolio/
