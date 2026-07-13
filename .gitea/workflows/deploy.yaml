@@ -20,7 +20,7 @@ jobs:
       - name: Debug where we are
         run: |
           echo "PWD: $(pwd)"
-          ls -la /
+          ls -la ./
 
       # (add your build step here if needed)
 
