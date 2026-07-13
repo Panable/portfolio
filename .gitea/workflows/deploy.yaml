@@ -25,9 +25,8 @@ jobs:
       # (add your build step here if needed)
 
       - name: Sync to Caddy root
-      run: |
-        rsync -a --delete \
-          --exclude '.git' \
-          --exclude '.gitea' \
-          --exclude '.idea' \
-          ./ /deploy/portfolio/
+      run: rsync -a --delete \
+            --exclude '.git' \
+            --exclude '.gitea' \
+            --exclude '.idea' \
+            ./ /deploy/portfolio/
