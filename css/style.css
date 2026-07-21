@@ -79,6 +79,7 @@ hr {
 
 li::marker {
   content: "> ";
+  white-space: normal;
 }
 
 h1 {
