@@ -253,7 +253,7 @@ img {
 
   .project-text {
     flex: 1 50%;
-    text-align: justify;
+    /* text-align: justify; */
     padding-right: 16px;
   }
 
