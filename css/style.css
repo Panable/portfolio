@@ -82,6 +82,14 @@ li::marker {
   white-space: normal;
 }
 
+li {
+    text-align: justify;
+}
+
+li + li {
+    margin-block-start: 0.5em;
+}
+
 h1 {
   margin: 16px 0;
 }
