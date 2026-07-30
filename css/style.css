@@ -77,16 +77,16 @@ hr {
   margin: 1rem 0;
 }
 
-li::marker {
+.summary li::marker {
   content: "> ";
   white-space: normal;
 }
 
-li {
+.summary li {
     text-align: justify;
 }
 
-li + li {
+.summary li + li {
     margin-block-start: 0.5em;
 }
 
@@ -173,6 +173,7 @@ h3 {
   min-height: 448px;
   padding: 48px 48px 0 48px;
   padding-bottom: 0px;
+  margin-bottom: 48px;
 }
 
 .project-technologies {
