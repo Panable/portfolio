@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
     <title>Dhanveer's Portfolio</title>
     <link href="css/reset.css" rel="stylesheet" />
     <link href="css/IosevkaCustomWeb.css" rel="stylesheet" />
@@ -106,7 +106,7 @@
               simulator.
             </p>
             <br />
-            <strong> The project features: </strong>
+            <h4>The project features:</h4>
             <ul>
               <li>Intricate sprite rendering</li>
               <li>Linearly interpolated randomisation function</li>
@@ -131,12 +131,96 @@
           <div class="project-footer">
             <p class="project-technologies">Assembly | C</p>
             <div class="project-buttons">
-              <button onclick="location.href = 'https://www.youtube.com/watch?v=vaL3m0NPaA4';" class="project-button" >Watch Video</button>
-              <form action="https://github.com/panable/Computer-Systems/tree/matchsticks">
+              <button
+                onclick="
+                  location.href = 'https://www.youtube.com/watch?v=vaL3m0NPaA4'
+                "
+                class="project-button"
+              >
+                Watch Video
+              </button>
+              <form
+                action="https://github.com/panable/Computer-Systems/tree/matchsticks"
+              >
                 <button type="submit" value="repo" class="project-button">
                   Repository
                 </button>
               </form>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-text">
+            <h3>Harchery</h3>
+            <p>
+              Harchery is a PHP full-stack CRUD web application which I
+              architected as part of a university project.
+            </p>
+            <br />
+            <p>
+              What makes this application special is that it uses a custom
+              <a
+                href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
+                >MVC</a
+              >
+              architecture which I developed on my own. Since this was a group
+              project, I also incorporated Docker to make collaborations easier.
+            </p>
+          </div>
+          <div class="project-image">
+            <figure>
+              <img src="harchery.webp" alt="Add new archer menu" />
+              <figcaption>Add new archer web page.</figcaption>
+            </figure>
+          </div>
+          <div class="project-footer">
+            <p class="project-technologies">
+              PHP | SQL | Docker | HTML/CSS | Python | Bash
+            </p>
+            <div class="project-buttons">
+              <form action="https://github.com/panable/harchery">
+                <button type="submit" value="repo" class="project-button">
+                  Repository
+                </button>
+              </form>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-text">
+            <h3>My hosting setup...</h3>
+            <p>
+              Everything you are reading right now was streamed to you from the little PC you see to the right!
+            </p>
+            <br />
+            <h4>Other things I host:</h4>
+            <ul>
+              <li>Custom git server (Gitea) to store Signals and other projects not suitable for Github</li>
+              <li>MKDocs - for signals documentation</li>
+              <li>A Syncthing instance for my Obsidian notes</li>
+              <li>A Gitea act runner for CI/CD (This website updates on every commit)</li>
+              <li>Any fleeting thing my heart desires (pet projects, testing, game servers)</li>
+            </ul>
+            <br />
+            <h4>How does it work:</h4>
+            It's a simple debian server that uses a single docker-compose script for all my needs. The main workhorse of the operation is <a href="https://traefik.io/traefik">Traefik</a>, which is an incredible reverse-proxy that automatically configures your services through docker labels.
+          </div>
+          <div class="project-image">
+            <figure>
+              <img src="hosting.webp" alt="A picture of a small mini pc" />
+              <figcaption>The AWS killer (cheaper anyway)</figcaption>
+            </figure>
+          </div>
+          <div class="project-footer">
+            <p class="project-technologies">
+              Debian | Gitea | Traefik | Caddy | Portainer | Syncthing
+            </p>
+            <div class="project-buttons">
+              <!-- <form action="https://github.com/panable/harchery"> -->
+              <!--   <button type="submit" value="repo" class="project-button"> -->
+              <!--     Repository -->
+              <!--   </button> -->
+              <!-- </form> -->
             </div>
           </div>
         </article>
