@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gruber Darker Colors</title>
+<style>
+    :root {
+        font-family: monospace;
+        background: #101010;
+        color: #e4e4ef;
+    }
+
+    body {
+        margin: 0;
+        padding: 40px;
+        background: #101010;
+    }
+
+    h1 {
+        color: #ffffff;
+        margin-bottom: 30px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        max-width: 1000px;
+    }
+
+    .color {
+        background: #181818;
+        border: 1px solid #282828;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .color:hover {
+        transform: translateY(-3px);
+        border-color: #565f73;
+    }
+
+    .preview {
+        height: 100px;
+    }
+
+    .info {
+        padding: 12px;
+    }
+
+    .name {
+        color: #f4f4ff;
+        margin-bottom: 5px;
+    }
+
+    .hex {
+        color: #95a99f;
+    }
+
+    #toast {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #282828;
+        color: #ffffff;
+        padding: 12px 20px;
+        border-radius: 6px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+        border: 1px solid #453d41;
+    }
+
+    #toast.show {
+        opacity: 1;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Gruber Darker Palette</h1>
+
+<div class="grid" id="colors"></div>
+
+<div id="toast"></div>
+
+<script>
+const colors = {
+    "gruber-darker-fg": "#e4e4ef",
+    "gruber-darker-fg+1": "#f4f4ff",
+    "gruber-darker-fg+2": "#f5f5f5",
+    "gruber-darker-white": "#ffffff",
+    "gruber-darker-black": "#000000",
+
+    "gruber-darker-bg-1": "#101010",
+    "gruber-darker-bg": "#181818",
+    "gruber-darker-bg+1": "#282828",
+    "gruber-darker-bg+2": "#453d41",
+    "gruber-darker-bg+3": "#484848",
+    "gruber-darker-bg+4": "#52494e",
+
+    "gruber-darker-red-1": "#c73c3f",
+    "gruber-darker-red": "#f43841",
+    "gruber-darker-red+1": "#ff4f58",
+
+    "gruber-darker-green": "#73c936",
+    "gruber-darker-yellow": "#ffdd33",
+    "gruber-darker-brown": "#cc8c3c",
+
+    "gruber-darker-quartz": "#95a99f",
+
+    "gruber-darker-niagara-2": "#303540",
+    "gruber-darker-niagara-1": "#565f73",
+    "gruber-darker-niagara": "#96a6c8",
+
+    "gruber-darker-wisteria": "#9e95c7"
+};
+
+const container = document.getElementById("colors");
+const toast = document.getElementById("toast");
+
+for (const [name, hex] of Object.entries(colors)) {
+    const div = document.createElement("div");
+    div.className = "color";
+
+    div.innerHTML = `
+        <div class="preview" style="background:${hex}"></div>
+        <div class="info">
+            <div class="name">${name}</div>
+            <div class="hex">${hex}</div>
+        </div>
+    `;
+
+    div.onclick = async () => {
+        await navigator.clipboard.writeText(hex);
+
+        toast.textContent = `Copied ${name}: ${hex}`;
+        toast.classList.add("show");
+
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 1500);
+    };
+
+    container.appendChild(div);
+}
+</script>
+
+</body>
+</html>
